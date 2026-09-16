@@ -1,0 +1,16 @@
+```json
+{
+  "name": "chatroom-backend",
+  "version": "1.0.0",
+  "description": "Username-only realtime chat server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  }
+}
+```
