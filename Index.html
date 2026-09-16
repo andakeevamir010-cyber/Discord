@@ -1,0 +1,146 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatRoom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Username screen -->
+    <div id="usernameScreen" class="overlay">
+        <div class="login-box">
+            <div class="logo">CHATROOM</div>
+            <p class="subtitle">Talk with everyone. No account required.</p>
+
+            <input
+                id="usernameInput"
+                type="text"
+                maxlength="20"
+                placeholder="Choose a username..."
+                autocomplete="off"
+            >
+
+            <button id="joinButton">JOIN CHAT</button>
+
+            <p id="usernameError" class="error"></p>
+        </div>
+    </div>
+
+    <!-- Main application -->
+    <div id="app" class="app hidden">
+
+        <!-- Server sidebar -->
+        <aside class="server-sidebar">
+            <div class="server-icon active">C</div>
+            <div class="server-icon">+</div>
+        </aside>
+
+        <!-- Channel sidebar -->
+        <aside class="channel-sidebar">
+
+            <div class="server-header">
+                <span>ChatRoom</span>
+                <span>⌄</span>
+            </div>
+
+            <div class="channel-section">
+                <div class="section-title">
+                    TEXT CHANNELS
+                </div>
+
+                <button class="channel active" data-channel="general">
+                    <span>#</span>
+                    general
+                </button>
+
+                <button class="channel" data-channel="gaming">
+                    <span>#</span>
+                    gaming
+                </button>
+
+                <button class="channel" data-channel="memes">
+                    <span>#</span>
+                    memes
+                </button>
+            </div>
+
+            <div class="user-area">
+                <div class="avatar" id="myAvatar">?</div>
+
+                <div class="my-user">
+                    <strong id="myUsername">User</strong>
+                    <span>Online</span>
+                </div>
+
+                <button id="changeUsername" class="small-button">
+                    ⚙
+                </button>
+            </div>
+
+        </aside>
+
+        <!-- Chat -->
+        <main class="chat">
+
+            <header class="chat-header">
+                <div>
+                    <span class="hash">#</span>
+                    <strong id="channelName">general</strong>
+                </div>
+
+                <div class="connection">
+                    <span id="connectionDot"></span>
+                    <span id="connectionText">Connecting...</span>
+                </div>
+            </header>
+
+            <section id="messages" class="messages">
+                <!-- Messages inserted here -->
+            </section>
+
+            <form id="messageForm" class="message-form">
+
+                <input
+                    id="messageInput"
+                    type="text"
+                    maxlength="500"
+                    placeholder="Message #general"
+                    autocomplete="off"
+                >
+
+                <button type="submit">
+                    ➤
+                </button>
+
+            </form>
+
+        </main>
+
+        <!-- Members -->
+        <aside class="members">
+
+            <div class="members-title">
+                ONLINE — <span id="onlineCount">0</span>
+            </div>
+
+            <div id="memberList">
+                <!-- Members inserted here -->
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- Socket.IO -->
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+
+    <!-- Application -->
+    <script src="app.js"></script>
+
+</body>
+</html>
+```
